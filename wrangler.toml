@@ -1,0 +1,14 @@
+name = "threads-demand-radar"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[[kv_namespaces]]
+binding = "RADAR_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+AUTO_REPLY = "false"
+THREADS_FIELDS = "id,text,media_type,permalink,timestamp,username,has_replies,is_quote_post,is_reply"
