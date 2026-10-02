@@ -31,7 +31,7 @@ function draft(b){return `如果你找的是${b.area||'台北'}的${b.primarySer
 
 async function searchThreads(keyword,since){
  if(!process.env.THREADS_ACCESS_TOKEN)throw Error('Missing THREADS_ACCESS_TOKEN');
- const u=new URL('https://graph.threads.net/v1.0/keyword_search');
+ const u=new URL('https://graph.threads.com/v1.0/keyword_search');
  u.searchParams.set('q',keyword);u.searchParams.set('search_type','RECENT');u.searchParams.set('search_mode','KEYWORD');
  u.searchParams.set('fields','id,text,media_type,permalink,timestamp,username,has_replies,is_quote_post,is_reply');
  u.searchParams.set('limit','50');u.searchParams.set('since',Math.floor(new Date(since).getTime()/1000));u.searchParams.set('access_token',process.env.THREADS_ACCESS_TOKEN);
